@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    background-color: rgb(19, 19, 19);
+    overflow-x: hidden;
+}
+
+/*Rolagem de Scroll Customizado*/
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    background: #28cfe9;
+    border-radius: 12px;
+    transition: all 0.3 ease;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #11aec6;
+}
+
+/*Estilização da NavBar*/
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(19, 19, 19);
+}
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.logo span{
+    color: #28cfe9;
+    text-shadow: 0 0 10px;
+}
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+.nav-container .links{
+    display: flex;
+}
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+.nav-container .links a::before{
+    position: absolute;
+    content: '';
+    bottom: 3px;
+    left: 0;
+    width: 0%; 
+    height: 3px;
+    background-color: #28cfe9;
+    transition: width 0.3s ease;
+}
+
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+.nav-container .links a:hover{
+    color: #28cfe9;
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2 linear;
+}
+
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2 linear;
+}
+
+.dropdown .links a:hover{
+    background-color: #28cfe9;
+}
+/*Estilização da section 1*/
+section {
+    width: 100%;
+    min-height: 55vh;
+}
+.typewriter{
+    color: white;
+    font-family: 'Poppins' sans-serif;
+    font-size: 1.0rem;
+    
+}
+.typewriter-text{
+    font-size: 1.7rem;
+    color: #28cfe9;
+    
+}
+
+section .main-container{
+    display: flex;
+    justify-content:space-around ;
+    padding-top: 100px;
+    padding-left: 225px;
+    padding-bottom: 300px;
+    align-items: center;
+}
+
+.main-container .image{
+    width: 500px; 
+    height: 50vh; 
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 5px #28cfe9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-container .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@keyframes animate {
+    0%{
+        scale: 1;
+    }
+
+    50%{
+        scale: 1.05;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+.main-container{
+    z-index: 1;
+}
+.main-container .content{
+    color: white;
+    width: 40%;
+    
+}
+
+.content h1 {
+    font-size: clamp(1.0rem, 1.0rem + 4vw, 1.50rem); 
+}
+
+.content h1 span {
+    color: #28cfe9;
+    text-shadow: 0 0 10px;
+}
+
+.content .typewriter {
+    font-size: clamp(1.0rem, 1.15rem + 4vw, 1.7rem); 
+    font-weight: 600;
+}
+
+.content .typewriter-text {
+    color: #28cfe9;
+    text-shadow: 0 0 10px;
+}
+
+.content p {
+    font-size: clamp(0.46rem, 0.23rem + 9vw, 1.15rem); 
+    margin: 10px 0;
+}
+
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.45rem; 
+    height: 3.45rem; 
+    background-color: transparent;
+    border: 0.23rem solid #28cfe9; 
+    border-radius: 50%;
+    color: #28cfe9;
+    margin: 5px 15px;
+    font-size: 1.73rem; 
+    transition: 0.2s linear;
+}
+
+.social-links i:hover {
+    scale: 1.3;
+    color: black;
+    background-color: #28cfe9;
+    filter: drop-shadow(0 0 5px #28cfe9);
+}
+
+.content button {
+    width: 57.5%; 
+    height: 6.9vh; 
+    margin: 30px;
+    background-color: #28cfe9;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 138%; 
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+
+.content button:hover {
+    scale: 1.1;
+    color: #28cfe9;
+    border: 2.3px solid #28cfe9;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 0 15px #28cfe9;
+}
+
+
+.animated{
+    position: relative;
+    width: 100%;
+    
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index: -1;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #28cfe9;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #5ddff3,
+    0 0 50px #28cfe9,
+    0 0 100px #5ddff3;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(120s / var(--i));
+    filter: blur(12px);
+}
+.bubbles span:nth-child(even){
+    background: #0eeb92;
+    box-shadow: 0 0 0 5px #0eeb92,
+    0 0 50px #0eeb92,
+    0 0 100px #0eeb92;
+}
+@keyframes animate {
+
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/*Estilização do sobre*/
+
+section .content{
+    width: 80%;
+    margin: 0px auto;
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+section .title span{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+section .title span::before,
+section .title span::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #28cfe9;
+    left: 0;
+    bottom: 0;
+}
+
+section .title span::after{
+    bottom: -7px;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.about .about-details .left{
+    width: 45%;
+}
+.about .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.about-details .right{
+    width: 50%;
+}
+section .topic{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+}
+.about-details .right p{
+    text-align: justify;
+    color: white;
+
+}
+section .button{
+    margin: 16px 0;
+}
+section .button button{
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 400;
+    background: #28cfe9;
+    color: white;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.4 ease;
+}
+
+
+section .button button:hover{
+    border-color: #28cfe9;
+    background-color: white;
+    color: #28cfe9;
+}
+/*Estilização das habilidades*/
+.skills{
+    background: black;
+}
+.skills .content{
+    padding: 40px 0;
+}
+.skills .skills-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills-details .text{
+    width: 50%;
+}
+.skills-details p{
+    color: white;
+    text-align: justify;
+}
+.skills .skills-details .experience{
+    display: flex;
+    align-items: center;
+    margin: 0, 10px;
+}
+.skills-details .experience .num{
+    color: white;
+    font-size: 80px;
+    text-shadow: 0 0 5px;
+}
+.skills-details .experience .exp{
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 6px;
+    text-shadow: 0 0 5px;
+}
+.skills-details .boxes{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.skills-details .box {
+    width: calc(100%  / 2 - 20px);
+    margin: 20px 0;
+}
+.skills-details .boxes .topic{
+    font-size: 20px;
+    color: #28cfe9;
+}
+.skills-details .boxes .per{
+    font-size: 60px;
+    color: #28cfe9;
+    text-shadow: 0 0 5px;
+}
+/*Estilização dos projetos*/
+
+.services{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.services .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.services .boxes .box{
+    margin: 10px 0;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px 10px;
+    box-shadow: 0 5px 5px #28cfe9;
+    cursor: default;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.services .boxes .box:hover{
+    background-color: #28cfe9;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #00ddff;
+    transform: translateY(-5px);
+}
+
+.services .boxes .box .icon{
+    height: 50px;
+    width: 50px;
+    background: #28cfe9;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: white;
+    margin: 0 auto 10px auto;
+    transition: all 0.4 ease;
+}
+.boxes .box:hover .icon{
+    background-color: white;
+    color: #28cfe9;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p{
+    color: white;
+    transition: 0.4 ease;
+}
+
+/*Estilização do contact*/
+
+.contact{
+    background-color: black;
+    color: white;
+    position: relative;
+    padding: 20px 0;
+    overflow: hidden;  
+   
+}
+.contact .content{
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.contact .text{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+
+}
+
+footer {
+    background:#28cfe9;
+    padding: 15px 0;
+    text-align: center;
+    font-family: 'Poppins' sans-serif;
+    
+}
+footer .text span{
+    font-size: 17px;
+    font-weight: 400;
+    color: white;
+}
+footer .text span a{
+    font-weight: 500;
+    color: white;
+}
+footer .text span a:hover{
+    text-decoration: underline;
+}
+.scroll-button a {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    background: #28cfe9;
+    padding: 7px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+@media (max-width: 1000px){
+    .about .about-details{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about .about-details .left{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .about-details .right{
+        width: 90%;
+        margin: 40px 0;
+    }
+
+    .services .boxes .box{
+        margin: 20px 0;
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 900px){
+    .about .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 968px) {
+    nav{
+        position: relative;
+    }
+    nav.logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    section .main-container {
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+    .hamburg,
+    .cancel{
+        opacity: 0;
+        pointer-events: visible;
+    }
+  
+    .main-container .content{
+        margin-top: 20px;
+        width: 80%;
+    }
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .main-container .image{
+        z-index: -1;
+        width: 50%;
+        height: 60%;
+    }
+    .skills .skills-details{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .skills-details .text{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .skills-details .boxes{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .services .boxes .box{
+        margin: 20px 0;
+        width: 100%;
+    }
+    .content .text{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    main-container .image{
+        width: 50%;
+        height: 60%;
+        margin-bottom: 0px;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+    .main-container button{
+        margin-top: 15px;
+    }
+    .skills-details .boxes .per{
+        font-size: 50px;
+        color: #28cfe9;
+    }
+}
+html {
+    scroll-behavior: smooth;
+  }
